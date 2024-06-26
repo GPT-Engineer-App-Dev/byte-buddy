@@ -1,7 +1,14 @@
 import { Container, Text, VStack, Heading, Button, Box, Image, Flex } from "@chakra-ui/react";
+import { useState } from 'react';
 import { FaCode, FaLaptopCode, FaChalkboardTeacher } from "react-icons/fa";
 
 const Index = () => {
+  const [enrolled, setEnrolled] = useState(false);
+
+  const handleEnroll = () => {
+    setEnrolled(true);
+  };
+
   return (
     <Container centerContent maxW="container.lg" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center" p={4}>
       <VStack spacing={8} textAlign="center">
@@ -25,6 +32,8 @@ const Index = () => {
           </Box>
         </Flex>
         <Button colorScheme="teal" size="lg">Get Started</Button>
+      <Button colorScheme="teal" size="lg" onClick={handleEnroll}>Enroll in Course</Button>
+        {enrolled && <Text fontSize="lg" color="green.500">You have successfully enrolled in the course!</Text>}
       </VStack>
     </Container>
   );
