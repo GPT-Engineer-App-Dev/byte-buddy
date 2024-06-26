@@ -1,4 +1,5 @@
 import { Container, Text, VStack, Heading, Button, Box, Image, Flex } from "@chakra-ui/react";
+import CodeEditor from '../components/CodeEditor';
 import { useState } from 'react';
 import { FaCode, FaLaptopCode, FaChalkboardTeacher } from "react-icons/fa";
 
@@ -34,6 +35,7 @@ const Index = () => {
         <Button colorScheme="teal" size="lg">Get Started</Button>
       <Button colorScheme="teal" size="lg" onClick={handleEnroll}>Enroll in Course</Button>
         {enrolled && <Text fontSize="lg" color="green.500">You have successfully enrolled in the course!</Text>}
+      <CodeEditor />
       </VStack>
     </Container>
   );
